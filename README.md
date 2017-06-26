@@ -1,32 +1,34 @@
-# NanoPi Neo Black
+# Orange Pi Zero2 Black
 
 [![Build Status](https://travis-ci.org/BrightAgrotech/nerves_system_orangepi_zero_plus2.png?branch=master)](https://travis-ci.org/BrightAgrotech/nerves_system_orangepi_zero_plus2)
 
-This is the base Nerves System configuration for the [NanoPi Neo Black](http://beagleboard.org/black). It
-also works on the [NanoPi Neo Green](http://beagleboard.org/green).
+This is the base Nerves System configuration for the [Orange P Zero2](http://www.orangepi.org/orangepizero/).
 
-![NanoPi Neo Black image](assets/images/nanopi-black.png)
-<br><sup>[Image credit](#fritzing)</sup>
+![Orange Pi Zero2 Black image](assets/images/orangepizero_info.jpg)
+<br><sup>[Image credit](#orangepi)</sup>
 
-| Feature        | Description                          |
-|:---------------|:-------------------------------------|
-| CPU            | 1 GHz ARM Cortex-A8                  |
-| Memory         | 512 MB DRAM                          |
-| Storage        | 4 GB eMMC Flash and MicroSD          |
-| Linux kernel   | 4.x w/ NPN patches                   |
-| IEx terminal   | ttyS0 via the FTDI connector         |
-| GPIO, I2C, SPI | Yes - Elixir ALE                     |
-| ADC            | Yes                                  |
-| PWM            | Yes, but no Elixir support           |
-| UART           | ttyS0 + more via device tree overlay |
-| Camera         | None                                 |
-| Ethernet       | Yes                                  |
-| WiFi           | Requires USB WiFi dongle             |
+| Feature        | Description                                                               |
+|:---------------|:--------------------------------------------------------------------------|
+| CPU            | H2 Quad-core Cortex-A7 H.265/HEVC 1080P.                                  |
+| GPU            | Mali400MP2 GPU @600MHz (OpenGL ES 2.0)                                    |
+| Memory         | 256MB/512MB DDR3 SDRAM(Share with GPU)(256MB version is Standard version) |
+| Storage        | TF card (Max. 64GB)/ NOR Flash(2MB Default not posted)                    |
+| Linux kernel   | 4.10 w/ sun8i emac patches                                                |
+| IEx terminal   | ttyS0 via the FTDI connector                                              |
+| GPIO, I2C, SPI | Yes - Elixir ALE                                                          |
+| ADC            | Yes                                                                       |
+| PWM            | WIP - Yes, but no Elixir support                                          |
+| UART           | ttyS0 + more via device tree overlay                                      |
+| Camera         | None                                                                      |
+| Ethernet       | Yes                                                                       |
+| WiFi           | WIP - Linux mainline driver support is poor for the XR819 chipset         |
 
-## Preparing your NanoPi Neo
 
-The NanoPi Neo hardware is configured to always try the
-eMMC Flash first when looking for software. If you have a new NanoPi Neo,
+
+## Preparing your Orange Pi Zero2
+
+The Orange Pi Zero2 hardware is configured to always try the
+eMMC Flash first when looking for software. If you have a new Orange Pi Zero2,
 it will boot to Debian even if a MicroSD card is inserted with good
 software. To boot from the MicroSD card, hold down the USER button and
 apply power.
@@ -36,10 +38,10 @@ TODO: Edit appropriately for Nano Pi vs BeagleBone
 > When starting with Nerves, you will find that booting
 from a MicroSD card is convenient since you can easily recover
 from broken software images. Holding down the USER button will get
-old. To force the NanoPi Neo to boot
+old. To force the Orange Pi Zero2 to boot
 from the MicroSD card, simply corrupt the image on the eMMC memory.
 
-> Don't worry, the NanoPi Neo website has instructions for restoring
+> Don't worry, the Orange Pi Zero2 website has instructions for restoring
 Debian.
 
 From Debian:

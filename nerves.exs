@@ -5,15 +5,14 @@ version =
   |> File.read!
   |> String.strip
 
-pkg = :nerves_system_orangepi_zero_plus2
+pkg = :nerves_system_orangepi_zero
 
 config pkg, :nerves_env,
   type: :system,
   version: version,
   compiler: :nerves_package,
   artifact_url: [
-    # "https://github.com/nerves-project/#{pkg}/releases/download/v#{version}/#{pkg}-v#{version}.tar.gz",
-    "http://appenv.brights.tech:5984/build-files/nerves_system_orangepi_zero_plus2-0.1.0/v0-7d5dddaaf560743cf375b362f2714f0c.tar.gz",
+    "https://github.com/BrightAgrotech/#{pkg}/releases/download/v#{version}/#{pkg}-v#{version}.tar.gz",
   ],
   platform: Nerves.System.BR,
   platform_config: [

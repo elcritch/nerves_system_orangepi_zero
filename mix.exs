@@ -6,7 +6,7 @@ defmodule NervesSystemRpi3.Mixfile do
     |> String.strip
 
   def project do
-    [app: :nerves_system_orangepi_zero_plus2,
+    [app: :nerves_system_orangepi_zero,
      version: @version,
      elixir: "~> 1.3",
      compilers: Mix.compilers ++ [:nerves_package],
@@ -49,6 +49,6 @@ defmodule NervesSystemRpi3.Mixfile do
         "linux",
         ],
      licenses: ["Apache 2.0"],
-     links: %{"Github" => "https://github.com/BrightAgrotech/nerves_system_orangepi_zero_plus2"}]
+     links: %{"Github" => "https://github.com/BrightAgrotech/nerves_system_orangepi_zero"}]
   end
 end

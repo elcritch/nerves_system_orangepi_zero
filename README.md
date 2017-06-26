@@ -1,6 +1,6 @@
 # NanoPi Neo Black
 
-[![Build Status](https://travis-ci.org/nerves-project/nerves_system_npn.png?branch=master)](https://travis-ci.org/nerves-project/nerves_system_npn)
+[![Build Status](https://travis-ci.org/BrightAgrotech/nerves_system_orangepi_zero_plus2.png?branch=master)](https://travis-ci.org/BrightAgrotech/nerves_system_orangepi_zero_plus2)
 
 This is the base Nerves System configuration for the [NanoPi Neo Black](http://beagleboard.org/black). It
 also works on the [NanoPi Neo Green](http://beagleboard.org/green).
@@ -131,16 +131,16 @@ The base image includes drivers and firmware for Ralink RT53xx
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
 
-  1. Add nerves_system_npn to your list of dependencies in `mix.exs`:
+  1. Add nerves_system_orangepi_zero_plus2 to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:nerves_system_npn, "~> 0.1.0"}]
+          [{:nerves_system_orangepi_zero_plus2, "~> 0.1.0"}]
         end
 
-  2. Ensure nerves_system_npn is started before your application:
+  2. Ensure nerves_system_orangepi_zero_plus2 is started before your application:
 
         def application do
-          [applications: [:nerves_system_npn]]
+          [applications: [:nerves_system_orangepi_zero_plus2]]
         end
 
 

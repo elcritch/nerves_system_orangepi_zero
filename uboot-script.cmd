@@ -19,7 +19,7 @@ setenv bootargs console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p2 rootfstype=
 # Load the kernel
 load mmc 0:1 ${kernel_addr_r} zImage
 
-# Load the DT. On the BBB, fdtfile=sun8i-h3-nanopi-neo.dtb
+# Load the DT. On the BBB, fdtfile=sun8i-h3-orangepi-pc.dtb
 load mmc 0:1 ${fdt_addr_r} ${fdtfile}
 
 # Boot!!

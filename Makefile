@@ -4,7 +4,7 @@ GIT_REVISION := $(shell git rev-parse HEAD)
 
 all:
 
-	echo "Compiling version ${VERSION} from git "
+	echo "Compiling version ${VERSION} from git revisioon ${GIT_REVISION}"
 	mix deps.get
 	mix compile
 

@@ -10,7 +10,7 @@ copy:
 	md5sum $(OUTDIR)/nerves_system_orangepi_zero-v${VERSION}.fw $(OUTDIR)/nerves_system_orangepi_zero-v${VERSION}.tar.gz
 
 all:
-	echo "Compiling version ${VERSION} from git "
+	echo "Compiling version ${VERSION} from git revisioon ${GIT_REVISION}"
 	mix deps.get
 	mix compile
 	cd .nerves/artifacts/nerves_system_orangepi_zero-${VERSION}.arm_unknown_linux_gnueabihf/ && \

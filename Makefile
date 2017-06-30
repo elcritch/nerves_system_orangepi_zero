@@ -8,6 +8,5 @@ all:
 	mix deps.get
 	mix compile
 
-	cd .nerves/artifacts/nerves_system_orangepi_zero-${VERSION}.arm_unknown_linux_gnueabihf/
-
-	make system
+	cd .nerves/artifacts/nerves_system_orangepi_zero-${VERSION}.arm_unknown_linux_gnueabihf/ && \
+	make 

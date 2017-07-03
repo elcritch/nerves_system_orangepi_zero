@@ -4,4 +4,6 @@
 erl_crash.dump
 *.ez
 *.beam
+*.fw
+*.tar.gz
 build.log

@@ -61,8 +61,8 @@ echo "Bootargs: ${bootargs}"
 
 # Load the kernel
 # load mmc 0:1 ${ramdisk_addr_r} /boot/uInitrd || load mmc 0 ${ramdisk_addr_r} uInitrd
-load mmc 0:1 ${kernel_addr_r} /boot/zImage || load mmc 0 ${kernel_addr_r} zImage
-# load mmc 0:1 ${kernel_addr_r} zImage
+# load mmc 0:1 ${kernel_addr_r} /boot/zImage || load mmc 0 ${kernel_addr_r} zImage
+load mmc 0:1 ${kernel_addr_r} zImage
 
 # Load the DT. On the BBB, fdtfile=sun8i-h3-nanopi-neo.dtb
 load mmc 0:1 ${fdt_addr_r} ${fdtfile}

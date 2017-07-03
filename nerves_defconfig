@@ -1,3 +1,9 @@
+# Tooling
+BR2_DL_DIR="${NERVES_DEFCONFIG_DIR}/.nerves/build-downloads"
+BR2_CCACHE=y
+BR2_CCACHE_DIR="${NERVES_DEFCONFIG_DIR}/.nerves/build-ccache"
+
+# Device System Settings
 BR2_arm=y
 BR2_cortex_a7=y
 BR2_ARM_FPU_VFPV4=y

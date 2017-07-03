@@ -35,18 +35,18 @@ itest.b *0x28 == 0x02 && echo "Booting from eMMC or secondary SD"
 if test "${console}" = "display" || test "${console}" = "both"; then setenv consoleargs "console=tty1"; fi
 if test "${console}" = "serial" || test "${console}" = "both"; then setenv consoleargs "${consoleargs} console=ttyS0,115200"; fi
 
-# Allow the user to override the kernel/erlinit arguments
-# via a "uEnv.txt" file in the FAT partition.
-if load mmc ${mmcdev}:1 ${loadaddr} uEnv.txt; then
-    echo "uEnv.txt found. Overriding environment."
-    env import -t -r ${loadaddr} ${filesize}
-
-    # Check if the user provided a set of commands to run
-    if test -n $uenvcmd; then
-        echo "Running uenvcmd..."
-        run uenvcmd
-    fi
-fi
+# # Allow the user to override the kernel/erlinit arguments
+# # via a "uEnv.txt" file in the FAT partition.
+# if load mmc ${mmcdev}:1 ${loadaddr} uEnv.txt; then
+#     echo "uEnv.txt found. Overriding environment."
+#     env import -t -r ${loadaddr} ${filesize}
+#
+#     # Check if the user provided a set of commands to run
+#     if test -n $uenvcmd; then
+#         echo "Running uenvcmd..."
+#         run uenvcmd
+#     fi
+# fi
 
 # =========================================================================== #
 # Boot System
@@ -56,6 +56,8 @@ setenv bootargs "root=${rootdev} ro rootwait rootfstype=${rootfstype} ${consolea
 
 # Disable GPU memory (?)
 if test "${disp_mem_reserves}" = "off"; then setenv bootargs "${bootargs} sunxi_ve_mem_reserve=0 sunxi_g2d_mem_reserve=0 sunxi_fb_mem_reserve=16"; fi
+
+echo "Bootargs: ${bootargs}"
 
 # Load the kernel
 # load mmc 0:1 ${ramdisk_addr_r} /boot/uInitrd || load mmc 0 ${ramdisk_addr_r} uInitrd

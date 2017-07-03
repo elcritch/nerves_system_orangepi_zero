@@ -23,6 +23,9 @@ setup:
 	mix local.nerves
 
 clean:
-	rm -Rf .nerves/
-	rm -Rf _build 
+	rm -Rf .nerves/artifacts/
+	rm -Rf _build
 
+dist-clean: clean
+	rm -Rf .nerves/
+	rm -Rf _build

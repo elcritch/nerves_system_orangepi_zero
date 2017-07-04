@@ -52,10 +52,12 @@ if test "${console}" = "serial" || test "${console}" = "both"; then setenv conso
 # Boot System
 # =========================================================================== #
 
-setenv bootargs "root=${rootdev} ro rootwait rootfstype=${rootfstype} ${consoleargs} cgroup_enable=memory panic=10 consoleblank=0 enforcing=0 loglevel=${verbosity}"
+# setenv bootargs "root=${rootdev} ro rootwait rootfstype=squashfs ${consoleargs} cgroup_enable=memory panic=10 consoleblank=0 enforcing=0 loglevel=${verbosity}"
 
 # Disable GPU memory (?)
-if test "${disp_mem_reserves}" = "off"; then setenv bootargs "${bootargs} sunxi_ve_mem_reserve=0 sunxi_g2d_mem_reserve=0 sunxi_fb_mem_reserve=16"; fi
+# if test "${disp_mem_reserves}" = "off"; then setenv bootargs "${bootargs} sunxi_ve_mem_reserve=0 sunxi_g2d_mem_reserve=0 sunxi_fb_mem_reserve=16"; fi
+
+setenv bootargs console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p2 rootfstype=squashfs ro rootwait
 
 echo "Bootargs: ${bootargs}"
 

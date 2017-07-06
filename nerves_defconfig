@@ -2,7 +2,7 @@
 BR2_DL_DIR="${NERVES_DEFCONFIG_DIR}/.nerves/build-downloads"
 BR2_CCACHE=y
 BR2_CCACHE_DIR="${NERVES_DEFCONFIG_DIR}/.nerves/build-ccache"
-BR2_CONFIG_CACHE="${NERVES_DEFCONFIG_DIR}/.nerves/build-config-cache"
+BR2_CONFIG_CACHE=y
 
 # Device System Settings
 BR2_arm=y

@@ -57,7 +57,7 @@ if test "${console}" = "serial" || test "${console}" = "both"; then setenv conso
 # Disable GPU memory (?)
 # if test "${disp_mem_reserves}" = "off"; then setenv bootargs "${bootargs} sunxi_ve_mem_reserve=0 sunxi_g2d_mem_reserve=0 sunxi_fb_mem_reserve=16"; fi
 
-setenv bootargs console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p2 rootfstype=squashfs ro rootwait
+setenv bootargs console=ttyS0,115200 earlyprintk loglevel=8 root=/dev/mmcblk0p2 rootfstype=squashfs ro rootwait
 
 echo "Bootargs: ${bootargs}"
 

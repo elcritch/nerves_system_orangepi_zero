@@ -6,7 +6,7 @@ diff --git a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts b/arch/arm/boot/d
  };
 
 +&emac {
-+		phy = <&phy1>;
++		phy-handle = <&int_mii_phy>;
 +		phy-mode = "mii";
 +		allwinner,use-internal-phy;
 +		allwinner,leds-active-low;

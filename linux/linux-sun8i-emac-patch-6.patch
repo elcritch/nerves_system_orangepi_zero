@@ -10,19 +10,15 @@ diff --git a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts b/arch/arm/boot/d
 		ethernet1 = &xr819;
  	};
 
-@@ -102,5 +102,16 @@
+@@ -102,5 +102,12 @@
  	status = "okay";
  };
 
 +&emac {
-+		phy = <&phy1>;
++	phy-handle = <&int_mii_phy>;
 +		phy-mode = "mii";
-+		allwinner,use-internal-phy;
 +		allwinner,leds-active-low;
 +		status = "okay";
-+		phy1: ethernet-phy@1 {
-+				reg = <1>;
-+		};
 +};
 +
  &mmc0 {

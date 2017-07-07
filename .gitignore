@@ -1,6 +1,7 @@
 /_build
 /cover
 /deps
+/.nerves
 erl_crash.dump
 *.ez
 *.beam

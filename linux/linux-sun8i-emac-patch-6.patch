@@ -1,17 +1,16 @@
 diff --git a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
-index 0adf932..25f2455 100644
 --- a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
 +++ b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
-@@ -57,6 +57,6 @@
+@@ -57,7 +57,7 @@
 
  	aliases {
  		serial0 = &uart0;
--   /* ethernet0 is the H3 emac, defined in sun8i-h3.dtsi */
+-		/* ethernet0 is the H3 emac, defined in sun8i-h3.dtsi */
 +		ethernet0 = &emac;
-    ethernet1 = &xr819;
+		ethernet1 = &xr819;
  	};
 
-@@ -102,5 +102,32 @@
+@@ -102,5 +102,16 @@
  	status = "okay";
  };
 

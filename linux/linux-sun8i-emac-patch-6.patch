@@ -1,24 +1,19 @@
 diff --git a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
 --- a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
 +++ b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
-@@ -57,7 +57,7 @@
-
- 	aliases {
- 		serial0 = &uart0;
--		/* ethernet0 is the H3 emac, defined in sun8i-h3.dtsi */
-+		ethernet0 = &emac;
-		ethernet1 = &xr819;
- 	};
-
-@@ -102,5 +102,12 @@
+@@ -102,5 +102,16 @@
  	status = "okay";
  };
 
 +&emac {
-+	phy-handle = <&int_mii_phy>;
++		phy = <&phy1>;
 +		phy-mode = "mii";
++		allwinner,use-internal-phy;
 +		allwinner,leds-active-low;
 +		status = "okay";
++		phy1: ethernet-phy@1 {
++				reg = <1>;
++		};
 +};
 +
  &mmc0 {

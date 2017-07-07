@@ -5,7 +5,7 @@ index 47da7e7..060569c 100644
 @@ -33,4 +33,17 @@ config SUN4I_EMAC
            To compile this driver as a module, choose M here.  The module
            will be called sun4i-emac.
- 
+
 +config SUN8I_EMAC
 +	tristate "Allwinner sun8i EMAC support"
 +	depends on ARCH_SUNXI || COMPILE_TEST
@@ -26,7 +26,7 @@ index 03129f7..8bd1693c 100644
 +++ b/drivers/net/ethernet/allwinner/Makefile
 @@ -3,3 +3,4 @@
  #
- 
+
  obj-$(CONFIG_SUN4I_EMAC) += sun4i-emac.o
 +obj-$(CONFIG_SUN8I_EMAC) += sun8i-emac.o
 diff --git a/drivers/net/ethernet/allwinner/sun8i-emac.c b/drivers/net/ethernet/allwinner/sun8i-emac.c
@@ -34,7 +34,7 @@ new file mode 100644
 index 0000000..aa525d7
 --- /dev/null
 +++ b/drivers/net/ethernet/allwinner/sun8i-emac.c
-@@ -0,0 +1,2266 @@
+@@ -0,0 +1,2267 @@
 +/*
 + * sun8i-emac driver
 + *
@@ -2258,6 +2258,7 @@ index 0000000..aa525d7
 +		goto probe_err;
 +	}
 +
++	dev_info(&pdev->dev,"Setup EPHY\n");
 +	return 0;
 +
 +probe_err:

@@ -36,7 +36,6 @@ defmodule NervesSystemRpi3.Mixfile do
     [maintainers: [ "Jaremy Creechley <creechley@gmail.com>" ],
     files: [
         "rootfs-additions",
-        "npn-busybox.config",
         "LICENSE",
         "mix.exs",
         "nerves_defconfig",

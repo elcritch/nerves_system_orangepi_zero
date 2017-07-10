@@ -8,7 +8,7 @@ defmodule NervesSystemRpi3.Mixfile do
   def project do
     [app: :nerves_system_orangepi_zero,
      version: @version,
-     elixir: "~> 1.3",
+     elixir: "~> 1.4",
      compilers: Mix.compilers ++ [:nerves_package],
      description: description(),
      package: package(),

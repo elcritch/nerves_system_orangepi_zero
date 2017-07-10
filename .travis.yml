@@ -62,6 +62,8 @@ script:
 # Deploy the build products
 before_deploy:
     - cd $NERVES_PACKAGE/.nerves/artifacts/*
+    - ls ./
+    - cat Makefile
     - make system
     - cd $NERVES_PACKAGE
     - $NERVES_PACKAGE/deps/nerves_system_br/scripts/ci-deploy.sh

@@ -1,10 +1,10 @@
-# Orange Pi Zero2 Black
+# Orange Pi Zero Black
 
 [![Build Status](https://travis-ci.org/BrightAgrotech/nerves_system_orangepi_zero.png?branch=master)](https://travis-ci.org/BrightAgrotech/nerves_system_orangepi_zero)
 
-This is the base Nerves System configuration for the [Orange P Zero2](http://www.orangepi.org/orangepizero/).
+This is the base Nerves System configuration for the [Orange P Zero](http://www.orangepi.org/orangepizero/).
 
-![Orange Pi Zero2 Black image](assets/images/orangepizero_info.jpg)
+![Orange Pi Zero Black image](assets/images/orangepizero_info.jpg)
 <br><sup>[Image credit](#orangepi)</sup>
 
 | Feature        | Description                                                               |
@@ -25,10 +25,10 @@ This is the base Nerves System configuration for the [Orange P Zero2](http://www
 
 
 
-## Preparing your Orange Pi Zero2
+## Preparing your Orange Pi Zero
 
-The Orange Pi Zero2 hardware is configured to always try the
-eMMC Flash first when looking for software. If you have a new Orange Pi Zero2,
+The Orange Pi Zero hardware is configured to always try the
+eMMC Flash first when looking for software. If you have a new Orange Pi Zero,
 it will boot to Debian even if a MicroSD card is inserted with good
 software. To boot from the MicroSD card, hold down the USER button and
 apply power.
@@ -38,10 +38,10 @@ TODO: Edit appropriately for Nano Pi vs BeagleBone
 > When starting with Nerves, you will find that booting
 from a MicroSD card is convenient since you can easily recover
 from broken software images. Holding down the USER button will get
-old. To force the Orange Pi Zero2 to boot
+old. To force the Orange Pi Zero to boot
 from the MicroSD card, simply corrupt the image on the eMMC memory.
 
-> Don't worry, the Orange Pi Zero2 website has instructions for restoring
+> Don't worry, the Orange Pi Zero website has instructions for restoring
 Debian.
 
 From Debian:

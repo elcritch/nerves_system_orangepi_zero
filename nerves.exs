@@ -21,7 +21,6 @@ config pkg, :nerves_env,
   checksum: [
     "linux",
     "rootfs-additions",
-    "npn-busybox.config",
     "fwup.conf",
     "nerves_defconfig",
     "nerves.exs",

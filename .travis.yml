@@ -58,10 +58,12 @@ before_deploy:
     - make system
     - cd $NERVES_PACKAGE
     - $NERVES_PACKAGE/deps/nerves_system_br/scripts/ci-deploy.sh
+
 deploy:
   # Deploy tagged releases to GitHub
   - provider: releases
-    api_key: $GITHUB_API_KEY
+    api_key:
+      secure: W+WFey5H904nQEKhfH4OJ7KvLrD9vylzmiQj753vU5gqoCGRbGAZY/Y1kIc8vsOsq5oK2sKFJCUC6x/n0YLTYBQDTSWgC5ynL9Ve5ekOUKfg9/cXUSwWZfDLr0CxesES/jPRsm90yGd62e/OQ55nrvFRPaoifw9ol5HeLqYkTsxcvUBTY13f7fPdrl+j4qqhW1Upunu1cRdIqxUC7eU6hF6tpKCUkSb9gbGDTBO1n7b89mZ5hC4/Y6cbZ9rZxRUfHb1lY9rGwFxE46GRCftcfslwS/i/6ZR+9/1sszkA9TvxG1NnJXkV0M3jv5H7Y9qecJxJ4OJgOEVDzZHDS9GdpOLIHhGSzf1wWsayYZOvQAtC1/eMM+xWXZPX8lJrpoWYb4SgPuZbDhTap48LsaQEJSfwtsUKAAK2z4GBYrDzh83+rrexXTCQQT79bvUiAUXYxROVmQYVUw93488Jzztof4vt1Y6t0oGK1rXUXRxQjROsQYLXisdNypvnP8K7tyCDjgaRvOWvlXHQPCyg9kNjx7EQNfog7ZjeFHb1dwPjTNWbO3PCXsZbOz5CSlCDl5m7Ed6tTgy6K1NWO+rmGducZBZ9veP8FW+J+7Udjld3ZX5VhMvBLhrwjYr1Dtv3g+c5ER8HmnuASjP9ifn/Y19NHMXOl4nxTKuO4hksz8E0w7A=
     file:
       - "artifacts/$CI_SYSTEM_NAME-$TRAVIS_TAG.tar.gz"
       - "artifacts/$CI_SYSTEM_NAME-$TRAVIS_TAG.fw"

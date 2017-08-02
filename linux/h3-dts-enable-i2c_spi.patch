@@ -1,0 +1,25 @@
+diff --git a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
+index 714da33..153707a 100644
+--- arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
++++ arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.mod.dts
+@@ -165,3 +165,20 @@
+        /* USB VBUS is always on */
+        status = "okay";
+ };
++
++&i2c0 {
++       status = "okay";
++};
++
++&i2c1 {
++       status = "okay";
++};
++
++&spi0 {
++       status = "okay";
++}
++
++&spi1 {
++       status = "okay";
++}
++

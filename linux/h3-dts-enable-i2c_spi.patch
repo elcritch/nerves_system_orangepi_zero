@@ -17,9 +17,9 @@ index 714da33..153707a 100644
 +
 +&spi0 {
 +       status = "okay";
-+}
++};
 +
 +&spi1 {
 +       status = "okay";
-+}
++};
 +

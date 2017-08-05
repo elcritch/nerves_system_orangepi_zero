@@ -31,7 +31,7 @@ The Orange Pi Zero does not have built in eMMC memory. Booting simply requires w
 ## Console access
 
 The console is configured to output to `ttyS0` by default. This is the
-UART output accessible by the 6 pin header labeled J1. A 3.3V FTDI
+UART output accessible by the 4 pin header (labeled "Debug Serial Port" above). A 3.3V FTDI
 cable is needed to access the output.
 
 The Orange Pi Zero does not support HDMI output.

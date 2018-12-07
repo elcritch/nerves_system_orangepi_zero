@@ -4,7 +4,7 @@ defmodule NervesSystemRpi3.Mixfile do
   @app :nerves_system_orangepi_zero
   @version Path.join(__DIR__, "VERSION")
     |> File.read!
-    |> String.strip
+    |> String.trim
 
   def project do
     [app: @app,
@@ -15,7 +15,7 @@ defmodule NervesSystemRpi3.Mixfile do
      package: package(),
      deps: deps(),
      # aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]
-     aliases: [loadconfig: [&bootstrap/1] ],
+     aliases: [loadconfig: [&bootstrap/1], docs: ["docs", &copy_images/1]],
      docs: [extras: ["README.md"], main: "readme"],
     ]
   end
@@ -50,13 +50,14 @@ defmodule NervesSystemRpi3.Mixfile do
      {:nerves_system_br, "~> 1.5.4", runtime: false },
      {:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.1.0", runtime: false},
      {:nerves_system_linter, "~> 0.3.0", runtime: false},
-     {:nerves_toolchain_arm_unknown_linux_gnueabihf, "~> 1.1", runtime: false}
+     {:nerves_toolchain_arm_unknown_linux_gnueabihf, "~> 1.1", runtime: false},
+     {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
     ]
   end
 
   defp description do
    """
-   Nerves System - NanoPi Neo
+   Nerves System - Orange Pi Zero
    """
   end
 
@@ -82,4 +83,10 @@ defmodule NervesSystemRpi3.Mixfile do
      licenses: ["Apache 2.0"],
      links: %{"Github" => "https://github.com/elcritch/#{@app}"}]
   end
+
+  # Copy the images referenced by docs, since ex_doc doesn't do this.
+  defp copy_images(_) do
+    File.cp_r("assets", "doc/assets")
+  end
+
 end

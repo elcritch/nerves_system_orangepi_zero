@@ -86,6 +86,15 @@ echo "Running Nerves U-Boot script"
 # Boot Configure
 # =========================================================================== #
 
+# Defaults
+console=ttyS0,115200n8
+bootdir=
+fdtdir=/boot
+fdtfile=undefined
+devtype=mmc
+# squashfs support is slow, so always load the kernel from FAT (FIXME)
+kernel_bootpart=0:1
+
 # default values
 setenv load_addr "0x44000000"
 setenv verbosity "1"
@@ -147,7 +156,6 @@ echo "Bootargs: ${bootargs}"
 load mmc 0:1 ${kernel_addr_r} zImage
 
 fdtfile=sun8i-h2-plus-orangepi-zero.dtb
-
 # Load the DT. On the BBB, fdtfile=sun8i-h3-nanopi-neo.dtb
 load mmc 0:1 ${fdt_addr_r} ${fdtfile}
 

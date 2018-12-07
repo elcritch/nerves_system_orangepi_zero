@@ -64,6 +64,7 @@ defmodule NervesSystemRpi3.Mixfile do
 
   defp package_files() do
     [
+      "fwup_include",
       "rootfs-additions",
       "LICENSE",
       "mix.exs",
@@ -72,6 +73,7 @@ defmodule NervesSystemRpi3.Mixfile do
       "README.md",
       "VERSION",
       "fwup.conf",
+      "fwup-revert.conf",
       "post-createfs.sh",
       "uboot-script.cmd",
       "linux",

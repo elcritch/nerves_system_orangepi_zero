@@ -11,6 +11,7 @@ defmodule NervesSystemRpi3.Mixfile do
      version: @version,
      elixir: "~> 1.6",
      compilers: Mix.compilers ++ [:nerves_package],
+     nerves_package: nerves_package(),
      description: description(),
      package: package(),
      deps: deps(),

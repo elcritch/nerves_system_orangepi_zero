@@ -57,21 +57,25 @@ defmodule NervesSystemRpi3.Mixfile do
    """
   end
 
+  defp package_files() do
+    [
+      "rootfs-additions",
+      "LICENSE",
+      "mix.exs",
+      "nerves_defconfig",
+      "nerves.exs",
+      "README.md",
+      "VERSION",
+      "fwup.conf",
+      "post-createfs.sh",
+      "uboot-script.cmd",
+      "linux",
+    ]
+  end
+
   defp package do
     [maintainers: [ "Jaremy Creechley <creechley@gmail.com>" ],
-    files: [
-        "rootfs-additions",
-        "LICENSE",
-        "mix.exs",
-        "nerves_defconfig",
-        "nerves.exs",
-        "README.md",
-        "VERSION",
-        "fwup.conf",
-        "post-createfs.sh",
-        "uboot-script.cmd",
-        "linux",
-        ],
+     files: package_files(),
      licenses: ["Apache 2.0"],
      links: %{"Github" => "https://github.com/elcritch/nerves_system_orangepi_zero"}]
   end

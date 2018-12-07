@@ -15,7 +15,7 @@ defmodule NervesSystemRpi3.Mixfile do
      package: package(),
      deps: deps(),
      # aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]
-     aliases: [loadconfig: [&bootstrap/1], docs: ["docs", &copy_images/1]],
+     aliases: [loadconfig: [&bootstrap/1] ],
     ]
   end
 

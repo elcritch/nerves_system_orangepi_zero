@@ -46,7 +46,9 @@ defmodule NervesSystemRpi3.Mixfile do
   defp deps do
     [
      {:nerves, "~> 1.3", runtime: false},
-     {:nerves_system_br, "~> 1.6", runtime: false },
+     {:nerves_system_br, "~> 1.5.4", runtime: false },
+     {:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.1.0", runtime: false},
+     {:nerves_system_linter, "~> 0.3.0", runtime: false},
      {:nerves_toolchain_arm_unknown_linux_gnueabihf, "~> 1.1", runtime: false}
     ]
   end
@@ -74,9 +76,9 @@ defmodule NervesSystemRpi3.Mixfile do
   end
 
   defp package do
-    [maintainers: [ "Jaremy Creechley <creechley@gmail.com>" ],
+    [ maintainers: [ "Jaremy Creechley <creechley@gmail.com>" ],
      files: package_files(),
      licenses: ["Apache 2.0"],
-     links: %{"Github" => "https://github.com/elcritch/nerves_system_orangepi_zero"}]
+     links: %{"Github" => "https://github.com/elcritch/#{@app}"}]
   end
 end

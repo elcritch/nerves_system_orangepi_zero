@@ -16,6 +16,7 @@ defmodule NervesSystemRpi3.Mixfile do
      deps: deps(),
      # aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]
      aliases: [loadconfig: [&bootstrap/1] ],
+     docs: [extras: ["README.md"], main: "readme"],
     ]
   end
 

@@ -1,24 +1,46 @@
 defmodule NervesSystemRpi3.Mixfile do
   use Mix.Project
 
+  @app :nerves_system_orangepi_zero
   @version Path.join(__DIR__, "VERSION")
     |> File.read!
     |> String.strip
 
   def project do
-    [app: :nerves_system_orangepi_zero,
+    [app: @app,
      version: @version,
-     elixir: "~> 1.4",
+     elixir: "~> 1.6",
      compilers: Mix.compilers ++ [:nerves_package],
      description: description(),
      package: package(),
      deps: deps(),
-     aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]
+     # aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]
+     aliases: [loadconfig: [&bootstrap/1], docs: ["docs", &copy_images/1]],
     ]
   end
 
   def application do
    []
+  end
+
+  defp bootstrap(args) do
+    System.put_env("MIX_TARGET", "orangepiz")
+    Application.start(:nerves_bootstrap)
+    Mix.Task.run("loadconfig", args)
+  end
+
+  defp nerves_package do
+    [
+      type: :system,
+      artifact_sites: [
+        {:github_releases, "elcritch/#{@app}"}
+      ],
+      platform: Nerves.System.BR,
+      platform_config: [
+        defconfig: "nerves_defconfig"
+      ],
+      checksum: package_files()
+    ]
   end
 
   defp deps do

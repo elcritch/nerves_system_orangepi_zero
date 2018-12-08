@@ -12,7 +12,7 @@ config pkg, :nerves_env,
   version: version,
   compiler: :nerves_package,
   artifact_url: [
-    "https://github.com/BrightAgrotech/#{pkg}/releases/download/v#{version}/#{pkg}-v#{version}.tar.gz",
+    "https://github.com/elcritch/#{pkg}/releases/download/v#{version}/#{pkg}-v#{version}.tar.gz",
   ],
   platform: Nerves.System.BR,
   platform_config: [
